@@ -1,0 +1,5 @@
+<form *ngIf="formVisible" (ngSubmit)="onSubmit()">
+  <label for="name">Task name</label>
+  <input name="text" type="text" [(ngModel)]="text" />
+  <input type="submit" value="Save Task" />
+</form>

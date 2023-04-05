@@ -1,0 +1,5 @@
+<app-task-list-items
+  *ngFor="let task of taskList"
+  [task]="task"
+  (deleteItem)="deleteItem($event)"
+></app-task-list-items>

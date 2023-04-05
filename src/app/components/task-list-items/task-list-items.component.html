@@ -1,0 +1,12 @@
+<div>
+  <div>
+    {{ task?.name }}
+  </div>
+  <div>
+    <button (click)="indexDelete(task?.id)">Delete</button>
+  </div>
+  <!-- <ul *ngFor="let task of tasks; let i = index">
+    <li>
+      {{ tasks.at(i)?.name }} <button (click)="indexDelete(i)">Delete</button>
+    </li> -->
+</div>
