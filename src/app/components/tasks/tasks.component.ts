@@ -19,12 +19,12 @@ export class TasksComponent {
 
   deleteItem(val: number){
     // if there is only one element left in a list
-    // if(this.taskList.length === 1){
-    //   this.taskList.splice(0, 1);
-    // }
-    // this.taskList.splice(val, 1);
-    const data = this.taskList.filter((task) => task.id !== val);
-    console.log(data)
-    this.taskList = data;
+    if(this.taskList.length === 1){
+      this.taskList.splice(0, 1);
+    }
+    this.taskList.splice(val, 1);
+    // const data = this.taskList.filter((task) => task.id !== val);
+    // console.log(data)
+    // this.taskList = data;
   }
 }

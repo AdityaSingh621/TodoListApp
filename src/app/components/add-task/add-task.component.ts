@@ -25,7 +25,7 @@ export class AddTaskComponent {
 
     // console.log(TaskItems.length);
 
-    TaskItems.push(newEntry)
+    TaskItems.push(newEntry);
     console.log(newEntry);
     console.log(TaskItems);
 
