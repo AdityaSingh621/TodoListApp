@@ -1,0 +1,14 @@
+<!-- <input type="text"> -->
+<h2 mat-dialog-title>Entre your Details</h2>
+<div mat-dialog-content>
+  <label for="name">Task name</label>
+  <input name="text" type="text" [(ngModel)]="text" />
+  <!-- <button mat-dialog-close (click)="onSubmit()">Add Task</button> -->
+
+  <div mat-dialog-actions>
+      <button mat-button (click)="onCancel()">Close</button>
+      <button mat-button [mat-dialog-close]="text" 
+                 cdkFocusInitial>Add Task</button>
+    </div>
+
+</div>

@@ -10,21 +10,28 @@ import { TaskListItemsComponent } from './components/task-list-items/task-list-i
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { FormsModule } from '@angular/forms';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    DialogboxComponent,
     ButtonComponent,
     TasksComponent,
     TaskListItemsComponent,
     AddTaskComponent,
 
   ],
+  entryComponents:[DialogboxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
