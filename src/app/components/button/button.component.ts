@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AddTaskComponent } from '../add-task/add-task.component';
 import { DialogboxComponent } from '../dialogbox/dialogbox.component';
 import { TaskItems } from 'src/app/mock-task';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-button',
@@ -11,7 +12,7 @@ import { TaskItems } from 'src/app/mock-task';
 })
 export class ButtonComponent {
 
-  constructor(private dialog : MatDialog){}
+  constructor(private dialog : MatDialog, private snackBar : MatSnackBar){}
 
   @Output() gotoHeader = new EventEmitter();
 
@@ -36,7 +37,10 @@ export class ButtonComponent {
   // }
 
   toggleButton(){
-    let dialogRef = this.dialog.open(DialogboxComponent);
+    let dialogRef = this.dialog.open(DialogboxComponent, {
+      width:'500px',
+      data : {name : 'Aditya'}
+    });
 
     dialogRef.afterClosed().subscribe((text:string) => {
 
@@ -44,9 +48,10 @@ export class ButtonComponent {
         alert('Entre Task Please!!')
         return;
       }
-
+      
       const newEntry = {name : text, id: TaskItems.length};
       TaskItems.push(newEntry);
+
       console.log(text)
     })
   }

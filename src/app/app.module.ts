@@ -9,11 +9,10 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskListItemsComponent } from './components/task-list-items/task-list-items.component';
 import { AddTaskComponent } from './components/add-task/add-task.component';
 import { FormsModule } from '@angular/forms';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
-
-
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -31,7 +30,9 @@ import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

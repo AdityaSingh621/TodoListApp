@@ -1,14 +1,23 @@
 <!-- <input type="text"> -->
-<h2 mat-dialog-title>Entre your Details</h2>
+<h1 mat-dialog-title>Entre your Task Name {{ data.name }}</h1>
 <div mat-dialog-content>
-  <label for="name">Task name</label>
+  <!-- <mat-form-field appearance="fill"> -->
+  <label for="text">Name</label>
   <input name="text" type="text" [(ngModel)]="text" />
+
+  <!-- </mat-form-field> -->
+  <!-- <mat-label>Name</mat-label> -->
   <!-- <button mat-dialog-close (click)="onSubmit()">Add Task</button> -->
 
   <div mat-dialog-actions>
-      <button mat-button (click)="onCancel()">Close</button>
-      <button mat-button [mat-dialog-close]="text" 
-                 cdkFocusInitial>Add Task</button>
-    </div>
-
+    <button mat-button (click)="onCancel()">Close</button>
+    <button
+      mat-button
+      [mat-dialog-close]="text"
+      cdkFocusInitial
+      (click)="openSnackBar(text, 'Dismiss')"
+    >
+      Add Task
+    </button>
+  </div>
 </div>

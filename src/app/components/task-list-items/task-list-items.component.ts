@@ -11,9 +11,9 @@ export class TaskListItemsComponent {
   @Input() task: Task | undefined;
   
   @Output() deleteItem = new EventEmitter<number>()
-  indexDelete(val? : number){
-   if(val !== undefined) {
-    this.deleteItem.emit(val)
+  indexDelete(id? : number){
+   if(id !== undefined) {
+    this.deleteItem.emit(id)
    }
   }
 }
