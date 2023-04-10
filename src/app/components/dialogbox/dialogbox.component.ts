@@ -17,25 +17,25 @@ export class DialogboxComponent {
     @Inject(MAT_DIALOG_DATA) public data: any, private snackBar: MatSnackBar
   ) {}
 
-  onSubmit() {
-    if (!this.text) {
-      alert('enter a text, Please!');
-      return;
-    }
+  // onSubmit() {
+  //   if (!this.text) {
+  //     alert('enter a text, Please!');
+  //     return;
+  //   }
 
-    const newEntry = {
-      id: TaskItems.length,
-      name: this.text,
-    };
+  //   const newEntry = {
+  //     id: TaskItems.length,
+  //     name: this.text,
+  //   };
 
-    // console.log(TaskItems.length);
+  //   // console.log(TaskItems.length);
 
-    TaskItems.push(newEntry);
-    console.log(newEntry);
-    console.log(TaskItems);
+  //   TaskItems.push(newEntry);
+  //   console.log(newEntry);
+  //   console.log(TaskItems);
 
-    this.text = '';
-  }
+  //   this.text = '';
+  // }
 
   openSnackBar(val :string, action : string){
     if(!val){

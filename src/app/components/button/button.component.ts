@@ -38,7 +38,8 @@ export class ButtonComponent {
 
   toggleButton(){
     let dialogRef = this.dialog.open(DialogboxComponent, {
-      width:'500px',
+      width:'400px',
+      height:'200px',
       data : {name : 'Aditya'}
     });
 

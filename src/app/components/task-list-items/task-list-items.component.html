@@ -1,12 +1,12 @@
-<div>
-  <div>
-    {{ task?.name }}
-  </div>
-  <div>
-    <button (click)="indexDelete(task?.id)">Delete</button>
-  </div>
-  <!-- <ul *ngFor="let task of tasks; let i = index">
-    <li>
-      {{ tasks.at(i)?.name }} <button (click)="indexDelete(i)">Delete</button>
-    </li> -->
+<div class = 'mainHeader'>
+  <mat-card class = 'bigHeader'>
+    <mat-card-header class = 'title'>
+      {{ task?.name }} 
+    <!-- <i class="material-icons"> delete</i> -->
+    </mat-card-header>
+    <mat-card-actions align = 'end' >
+      <i id = 'btn-del' class="material-icons" (click)="indexDelete(task?.id)">delete</i>
+    </mat-card-actions>
+    
+  </mat-card>
 </div>

@@ -13,6 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import {MatCardModule} from '@angular/material/card'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     FormsModule,
     MatDialogModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

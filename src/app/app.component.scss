@@ -1,0 +1,21 @@
+.header{
+      margin-top: 90px;
+      border: 2px solid rgb(171, 231, 241);
+      max-width: 400px;
+      min-width: 400px;
+      max-height: 600px;
+      min-height: 600px;
+      border-radius: 40px;
+      overflow: scroll;
+      margin-bottom: 20px;
+      background-color: #3450a1;
+}
+
+.bigHeader{
+      display: flex;
+      justify-content: center;
+}
+
+.heading{
+      margin-top: 20px;
+}
