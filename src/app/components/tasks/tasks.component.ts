@@ -19,16 +19,13 @@ export class TasksComponent {
   // }];
 
   deleteItem(id: number, action: string, task: Task) {
-    // if there is only one element left in a list
-    // if(this.taskList.length === 1){
-    //   this.taskList.splice(0, 1);
-    // }
-    // this.taskList.splice(id, 1);
-    // console.log(id)
+    let newId = this.taskList.indexOf(task);
+    console.log(newId)
+    this.taskList.splice(newId, 1);
 
-    const data = this.taskList.filter((task) => task.id !== id);
-    console.log(data);
-    this.taskList = data;
+    // const data = this.taskList.filter((task) => task.id !== id);
+    // console.log(data);
+    // this.taskList = data;
 
     this.snackBar.open(task.name, action, {duration: 3000})
 
