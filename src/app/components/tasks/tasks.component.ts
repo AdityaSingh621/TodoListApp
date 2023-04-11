@@ -11,9 +11,9 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./tasks.component.scss'],
 })
 export class TasksComponent {
-  taskList:Task[] = TaskItems;
+  taskList: Task[] = TaskItems;
 
-  constructor(private snackBar: MatSnackBar, private dialog:MatDialog) {}
+  constructor(private snackBar: MatSnackBar, private dialog: MatDialog) {}
 
   // [{
   //   name: 'Hi',
@@ -22,7 +22,7 @@ export class TasksComponent {
 
   deleteItem(id: number, action: string, task: Task) {
     let newId = this.taskList.indexOf(task);
-    console.log(newId)
+    console.log(newId);
     this.taskList.splice(newId, 1);
 
     // const data = this.taskList.filter((task) => task.id !== id);
@@ -36,7 +36,7 @@ export class TasksComponent {
     snackBarRef.afterDismissed().subscribe((res) => {
       console.log(res.dismissedByAction);
       if (res.dismissedByAction) {
-        this.taskList.push({name : task.name, id : task.id});
+        this.taskList.push({ name: task.name, id: task.id });
 
         console.log(
           '🚀 ~ file: tasks.component.ts:32 ~ TasksComponent ~ snackBarRef.afterDismissed ~ task:',
@@ -50,22 +50,22 @@ export class TasksComponent {
     // })
   }
 
-  editItem(task : Task){
-
-    let dialogRef = this.dialog.open(EditTaskComponent);
+  editItem(task: Task) {
+    let dialogRef = this.dialog.open(EditTaskComponent,  {
+      width:'500px',
+      height:'200px'
+    });
 
     dialogRef.afterClosed().subscribe((text) => {
       console.log(task);
 
       let id = this.taskList.indexOf(task);
-    console.log(id);
-    this.taskList[id].name = text;
+      console.log(id);
+      this.taskList[id].name = text;
 
       // if(id !== undefined){
       //   TaskItems[id].name = text;
       // }
-    })
-
-    
+    });
   }
 }
