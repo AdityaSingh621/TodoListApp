@@ -27,21 +27,21 @@ export class TasksComponent {
     // console.log(data);
     // this.taskList = data;
 
-    this.snackBar.open(task.name, action, {duration: 3000})
+    // this.snackBar.open(task.name, action, {duration: 3000})
 
     // For Doing Undo
-    // let snackBarRef = this.snackBar.open(task.name, action, { duration: 4000 });
-    // snackBarRef.afterDismissed().subscribe((res) => {
-    //   console.log(res.dismissedByAction);
-    //   if (res.dismissedByAction) {
-    //     // this.taskList.push({name : task.name, id : task.id});
+    let snackBarRef = this.snackBar.open(task.name, action, { duration: 4000 });
+    snackBarRef.afterDismissed().subscribe((res) => {
+      console.log(res.dismissedByAction);
+      if (res.dismissedByAction) {
+        this.taskList.push({name : task.name, id : task.id});
 
-    //     console.log(
-    //       '🚀 ~ file: tasks.component.ts:32 ~ TasksComponent ~ snackBarRef.afterDismissed ~ task:',
-    //       task
-    //     );
-    //   }
-    // });
+        console.log(
+          '🚀 ~ file: tasks.component.ts:32 ~ TasksComponent ~ snackBarRef.afterDismissed ~ task:',
+          task
+        );
+      }
+    });
 
     // snackBarRef.onAction().subscribe((res) => {
     //   console.log(res);
