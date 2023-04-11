@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TaskItems } from 'src/app/mock-task';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Task } from 'src/app/Task';
+import { EditTaskComponent } from '../edit-task/edit-task.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tasks',
@@ -11,7 +13,7 @@ import { Task } from 'src/app/Task';
 export class TasksComponent {
   taskList:Task[] = TaskItems;
 
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(private snackBar: MatSnackBar, private dialog:MatDialog) {}
 
   // [{
   //   name: 'Hi',
@@ -46,5 +48,24 @@ export class TasksComponent {
     // snackBarRef.onAction().subscribe((res) => {
     //   console.log(res);
     // })
+  }
+
+  editItem(task : Task){
+
+    let dialogRef = this.dialog.open(EditTaskComponent);
+
+    dialogRef.afterClosed().subscribe((text) => {
+      console.log(task);
+
+      let id = this.taskList.indexOf(task);
+    console.log(id);
+    this.taskList[id].name = text;
+
+      // if(id !== undefined){
+      //   TaskItems[id].name = text;
+      // }
+    })
+
+    
   }
 }

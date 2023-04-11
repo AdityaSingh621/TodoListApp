@@ -2,4 +2,5 @@
   *ngFor="let task of taskList"
   [task]="task"
   (deleteItem)="deleteItem($event, 'Undo', task)"
+  (editItem)="editItem(task)"
 ></app-task-list-items>

@@ -1,0 +1,19 @@
+
+<h1 mat-dialog-title>Edit Task</h1>
+<div mat-dialog-content>
+  <!-- <mat-form-field appearance="fill"> -->
+  <label for="text">Name</label>
+  <input name="text" type="text" [(ngModel)]="text" />
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Close</button>
+    <button
+      mat-button
+      [mat-dialog-close]="text"
+      cdkFocusInitial
+      (click)="openSnackBar(text, 'Dismiss')"
+    >
+      Save
+    </button>
+  </div>
+</div>

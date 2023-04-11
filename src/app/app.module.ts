@@ -13,7 +13,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import { EditTaskComponent } from './components/edit-task/edit-task.component'
 
 @NgModule({
   declarations: [
@@ -24,9 +25,10 @@ import {MatCardModule} from '@angular/material/card'
     TasksComponent,
     TaskListItemsComponent,
     AddTaskComponent,
+    EditTaskComponent,
 
   ],
-  entryComponents:[DialogboxComponent],
+  entryComponents:[DialogboxComponent,EditTaskComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
