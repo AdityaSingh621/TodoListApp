@@ -17,6 +17,10 @@ export class EditTaskComponent {
 
   onCancel() {
     console.log('Closed');
+    // if(!this.text){
+    // this.dialogRef.close();
+    //   return;
+    // }
     console.log(this.text);
     this.dialogRef.close();
   }

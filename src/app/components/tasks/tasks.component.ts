@@ -14,12 +14,7 @@ export class TasksComponent {
   taskList: Task[] = TaskItems;
 
   constructor(private snackBar: MatSnackBar, private dialog: MatDialog) {}
-
-  // [{
-  //   name: 'Hi',
-  //   id: 1
-  // }];
-
+  
   deleteItem(id: number, action: string, task: Task) {
     let newId = this.taskList.indexOf(task);
     console.log(newId);
@@ -59,13 +54,15 @@ export class TasksComponent {
     dialogRef.afterClosed().subscribe((text) => {
       console.log(task);
 
+      // if Someone not input in edit option
+      if(!text){
+        alert('Please Enter Something!');
+        return;
+      }
+
       let id = this.taskList.indexOf(task);
       console.log(id);
       this.taskList[id].name = text;
-
-      // if(id !== undefined){
-      //   TaskItems[id].name = text;
-      // }
     });
   }
 }
