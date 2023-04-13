@@ -15,6 +15,7 @@ import { DialogboxComponent } from './components/dialogbox/dialogbox.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import {MatCardModule} from '@angular/material/card';
 import { EditTaskComponent } from './components/edit-task/edit-task.component'
+import{MatCheckboxModule} from '@angular/material/checkbox'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component'
     TaskListItemsComponent,
     AddTaskComponent,
     EditTaskComponent,
-
+    
   ],
   entryComponents:[DialogboxComponent,EditTaskComponent],
   imports: [
@@ -36,7 +37,8 @@ import { EditTaskComponent } from './components/edit-task/edit-task.component'
     MatDialogModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

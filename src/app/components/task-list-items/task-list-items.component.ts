@@ -12,6 +12,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class TaskListItemsComponent {
   @Input() task: Task | undefined;
+
+  checkBoxValue:boolean = false;
   
   @Output() deleteItem = new EventEmitter<number>()
   @Output() editItem = new EventEmitter<number>()
@@ -22,6 +24,14 @@ export class TaskListItemsComponent {
    if(id !== undefined) {
     this.deleteItem.emit(id)
    }
+  }
+
+  toggle(){
+    this.checkBoxValue =! this.checkBoxValue;
+    if(this.checkBoxValue){
+      this.task?.name
+    }
+    console.log(this.checkBoxValue)
   }
 
   editBtn(){

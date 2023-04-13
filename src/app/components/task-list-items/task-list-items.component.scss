@@ -31,6 +31,7 @@
 // }
 
 #btn-del:hover{
+      cursor: pointer;
       color: red;
 }
 
@@ -43,5 +44,11 @@
 // }
 
 #btn-edit:hover{
+      cursor: pointer;
       color: orange;
+}
+
+.textDeco{
+      text-decoration: line-through;
+      opacity: 0.4;
 }

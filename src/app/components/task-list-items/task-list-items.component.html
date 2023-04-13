@@ -1,11 +1,13 @@
 <div class = 'mainHeader'>
   <mat-card class = 'bigHeader'>
 
-    <mat-card-header class = 'title'>
+    <mat-card-header class = 'title' [ngClass]="{'textDeco' : checkBoxValue === true }">
       {{ task?.name }} 
     <!-- <i class="material-icons"> delete</i> -->
     </mat-card-header>
     <mat-card-actions align = 'end' >
+    <mat-checkbox  color="primary" (change)="toggle()" ></mat-checkbox>
+
       <i id = 'btn-edit'  class="material-icons green-color" (click)="editBtn()">edit</i>
       <i id = 'btn-del' class="material-icons" (click)="indexDelete(task?.id)">delete</i>
     </mat-card-actions>
